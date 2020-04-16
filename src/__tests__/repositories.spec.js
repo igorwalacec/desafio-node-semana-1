@@ -88,16 +88,10 @@ describe("Repositories", () => {
     const response = await request(app)
       .put(`/repositories/${repository.body.id}`)
       .send({
-        url: "https://github.com/Rocketseat/umbriel2",
-        title: "Umbriel2",
-        techs: ["React", "ReactNative2", "TypeScript2", "ContextApi2"],
         likes: 15,
       });
 
     expect(response.body).toMatchObject({
-      url: "https://github.com/Rocketseat/umbriel2",
-      title: "Umbriel2",
-      techs: ["React", "ReactNative2", "TypeScript2", "ContextApi2"],
       likes: 0,
     });
   });

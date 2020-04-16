@@ -61,7 +61,7 @@ app.post("/repositories", validateRepository, (request, response) => {
   return response.status(201).json(repository);
 });
 
-app.put("/repositories/:id", validateRepository, (request, response) => {
+app.put("/repositories/:id", (request, response) => {
   const { id } = request.params;
   const { title, url, techs = [] } = request.body;
 
